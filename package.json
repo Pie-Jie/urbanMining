@@ -1,0 +1,19 @@
+{
+  "name": "urbanmining",
+  "version": "1.0.0",
+  "description": "Urban mining: City as a sound box",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pie-Jie/urbanMining.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pie-Jie/urbanMining/issues"
+  },
+  "homepage": "https://github.com/Pie-Jie/urbanMining#readme"
+}
