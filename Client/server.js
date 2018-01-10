@@ -32,18 +32,8 @@ socket.on('connect', function(socket) {
     console.log('Connected!');
 });
 
-var waitTime = 3000;
-var currentTime = 0;
-var waitInterval = 100;
-var percentWaited = 0;
 
-function writeWaitingPercent(p) {
-    process.stdout.clearLine();
-    process.stdout.cursorTo(0);
-    //process.stdout.write(`waiting ... ${p}%`);
-}
-
-
+/*
 particle.getEventStream({ auth: token }).then(function(stream) {
     
     stream.on('gpsdata', function(data) {
@@ -64,7 +54,9 @@ particle.getEventStream({ auth: token }).then(function(stream) {
         
 
 
+});
 
+*/
 socket.on('settings', function(data){
   const settings = data;
   console.log("received settings :: " + data);
@@ -73,13 +65,9 @@ socket.on('settings', function(data){
       localAddress: "0.0.0.0",
       localPort: settings.oscInputPort
   });
-    
-   
-        
-});
 
   //send osc message to server
-/*
+    /*
     particle.getEventStream({ auth: token }).then(function(stream) {
     stream.on('longitude', function(data) {
       console.log("Event: ", data);
