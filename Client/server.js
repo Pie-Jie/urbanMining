@@ -79,7 +79,7 @@ socket.on('settings', function(data){
 });
 
   //send osc message to server
-    /*
+/*
     particle.getEventStream({ auth: token }).then(function(stream) {
     stream.on('longitude', function(data) {
       console.log("Event: ", data);
@@ -92,7 +92,7 @@ socket.on('settings', function(data){
       //oscMsg = dataFromParticle;
       console.log(`osc msg: ${oscMsg.address}`);
       console.log(`osc args: ${oscMsg.args}`);
-      //socket.emit(oscMsg.address, oscMsg.args)
+      socket.emit(oscMsg.address, oscMsg.args)
   });
 
   for (let param of settings.params) {
