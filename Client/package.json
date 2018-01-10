@@ -1,0 +1,31 @@
+{
+  "name": "synfocycle-client",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.2.0"
+  },
+  "description": "run * git clone this repo * $ npm install  * $ node server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Team Dublin",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.13.4",
+    "osc": "2.2.0",
+    "particle-api-js": "^7.0.1",
+    "socket.io": "^1.4.6",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pie-Jie/urbanMining.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pie-Jie/urbanMining/issues"
+  },
+  "homepage": "https://github.com/Pie-Jie/urbanMining#readme"
+}
