@@ -1,15 +1,14 @@
 var Particle = require('particle-api-js');
 var particle = new Particle();
 var fs = require('fs');
+var osc = require('osc');
+const express = require('express');
+var io = require('socket.io-client');
+const path = require('path');
+const PORT = process.env.PORT || 4000;
 var token;
 var devicesPr;
 
-var osc = require("osc");
-const path = require('path');
-const PORT = process.env.PORT || 4000;
-
-const express = require('express');
-var io = require('socket.io-client');
 var socket = io.connect('ws://synfocycle.herokuapp.com', {
     reconnect: true
 });
@@ -36,7 +35,6 @@ particle.login({
     }
 );
 
-
 var startStream = function () {
     var devicesPr = particle.getEventStream({
         name: 'gpsData',
@@ -61,11 +59,16 @@ var startStream = function () {
                 }
             });
             socket.emit('/latitude', incomingData[0]);
+            console.log(`latitude: ${incomingData[0]}`);
             socket.emit('/longitude', incomingData[1]);
+            console.log(`longitude: ${incomingData[1]}`);
             socket.emit('/altitude', incomingData[2]);
-            socket.emot('/kmph', incomingData[3]);
-        });
-    
+            console.log(`altitude: ${incomingData[2]}`);
+            if(incomingData[3] != undefined){
+                socket.emit('/kmph', incomingData[3]);
+                console.log(`kmph: ${incomingData[3]}`);    
+            }         
+        });    
     });
 };
 
