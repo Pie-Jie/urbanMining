@@ -46,7 +46,6 @@ socket.on('state', function(state) {
         if (state.hasOwnProperty(variable)) {
             str+='<li class="collection-item">';
             str+='<b>'+variable+'</b> '+state[variable];
-            str+='<b>test '+variable+'</b> '+state[variable];
             str+='<input type="range" id="test5" value="'+state[variable]*1000+'" min="0" max="1000" />';
             str+='<b>'+Date()+'</b>';
             str+='</li>';
