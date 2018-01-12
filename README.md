@@ -16,8 +16,8 @@ Give examples
 
 A step by step series of examples that tell you have to get a development env running
 
-Download Processing on your computer.
-Open the sketch from our Github repository;
+Download Processing on your computer.<br>
+Open the sketch from our Github repository;<br>
 Go to SKETCH > IMPORT LIBRARY > ADD LIBRARY and download the oscP5 library.
 
 ```
