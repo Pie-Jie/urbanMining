@@ -2,21 +2,19 @@ var Particle = require('particle-api-js');
 var particle = new Particle();
 var fs = require('fs');
 var token;
-var devicesPr = particle.listDevices({ auth: token });
+var devicesPr;
 
 var osc = require("osc");
 const path = require('path');
 const PORT = process.env.PORT || 4000;
-const INDEX = path.join(__dirname, 'index.html');
 
 const express = require('express');
 var io = require('socket.io-client');
-var socket = io.connect('ws://afternoon-shore-70838.herokuapp.com', {
+var socket = io.connect('ws://synfocycle.herokuapp.com', {
     reconnect: true
 });
 
 const server = express()
-    .use((req, res) => res.sendFile(INDEX))
     .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 socket.on('connect', function (socket) {
@@ -29,6 +27,7 @@ particle.login({
 }).then(
     function (data) {
         token = data.body.access_token;
+        devicesPr = particle.listDevices({ auth: token });
         console.log('API call completed on promise resolve: ', token);
         startStream();
     },
@@ -65,12 +64,6 @@ var startStream = function () {
             socket.emit('/longitude', incomingData[1]);
             socket.emit('/altitude', incomingData[2]);
             socket.emot('/kmph', incomingData[3]);
-        });
-                
-    
-        stream.on('end', function () {
-            console.warn("Event stream ended! re-opening in 1 second...");
-            setTimeout(openStream, 1 * 1000);
         });
     
     });

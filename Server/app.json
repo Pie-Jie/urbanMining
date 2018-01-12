@@ -1,0 +1,6 @@
+{
+  "name": "Synfocycle",
+  "description": "A live sound-bicycle-gps project by Team Dublin, made with Particle Electron",
+  "repository": "https://github.com/heroku-examples/node-socket.io",
+  "keywords": ["node", "particle", "socket.io", "electron", "synfocycle"]
+}
