@@ -15,7 +15,7 @@
   "dependencies": {
     "express": "4.13.4",
     "fs": "0.0.1-security",
-    "osc": "2.2.0",
+    "osc": "^2.2.0",
     "particle-api-js": "^7.0.1",
     "socket.io": "^1.4.6",
     "xml2js": "^0.4.17"
