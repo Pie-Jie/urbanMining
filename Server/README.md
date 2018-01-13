@@ -1,19 +1,20 @@
-# SYNFOCYCLE OSC 2 WEBSOCKET server
+# SERVER
 
 https://synfocycle.herokuapp.com/
 
-## Install
+## How to use
+
+### Install the dependencies
 
 ```
 npm install
 ```
 
-## Deploy
+### Start the server
 
 ```
 node server
 ```
-or
 ```
 heroku local
 ```
