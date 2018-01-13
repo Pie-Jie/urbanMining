@@ -1,3 +1,19 @@
 # SYNFOCYCLE OSC 2 WEBSOCKET server
 
-https://afternoon-shore-70838.herokuapp.com/
+https://synfocycle.herokuapp.com/
+
+## Install
+
+```
+npm install
+```
+
+## Deploy
+
+```
+node server
+```
+or
+```
+heroku local
+```

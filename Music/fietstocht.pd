@@ -1,6 +1,6 @@
-#N canvas 959 23 480 677 10;
+#N canvas 606 80 378 306 10;
 #X declare -lib oscx;
-#N canvas 120 99 850 458 calibration 1;
+#N canvas 120 99 850 458 calibration 0;
 #X obj 39 -752 inlet;
 #X text 81 -752 Latitude;
 #X obj 42 -374 outlet;
@@ -19,8 +19,8 @@
 #X connect 3 0 10 0;
 #X connect 6 0 9 0;
 #X connect 9 0 7 0;
-#X restore -7 595 pd calibration;
-#N canvas 67 23 1338 797 sound 1;
+#X restore -11 210 pd calibration;
+#N canvas -73 298 1338 797 sound 1;
 #X obj 44 34 inlet;
 #X text 42 12 Latitude;
 #X obj 150 35 inlet;
@@ -288,7 +288,7 @@
 #X text 398 157 Achtergrond drums;
 #X obj 1035 713 osc~;
 #X obj 554 309 vsl 15 128 0 10 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2100 1;
+-1 -1 1600 1;
 #X obj 610 575 == 127;
 #X obj 669 573 == 128;
 #X obj 721 570 == 129;
@@ -310,6 +310,19 @@
 #X msg 503 490 1 \, 0 50;
 #X text 141 156 Detecteerd ritme + geeft door aan drums;
 #X obj 257 447 / 4;
+#X floatatom 616 740 10 0 0 0 - - -;
+#X text 672 41 Als meter van fiets overeen komen met van de mogelijk
+gegeven opties \, wordt de MIDI noot van deze hoogte doorgegeven.;
+#X text 673 89 De noten zijn Do Re Mi Fa Sol la Si;
+#X text 1210 19 Hier worden akkoorden getriggerd;
+#X text 1208 38 Akkoorden bestaan uit 3 noten harmonische noten die
+op dezelfde moment worden aangespeeld. En zo een harmonische klank
+vormen.;
+#X text 1276 495 Aanspelen van 3 noten;
+#X text 1327 244 if-structuur die kijkt welk akkoord moet aangespeeld
+worden.;
+#X text 222 483 Ritme gedeeld door 4 geeft moment aan waarop high head
+moet triggeren.;
 #X connect 0 0 5 0;
 #X connect 2 0 6 0;
 #X connect 3 0 7 0;
@@ -548,6 +561,7 @@
 #X connect 85 0 86 0;
 #X connect 86 0 88 0;
 #X connect 87 0 250 0;
+#X connect 87 0 272 0;
 #X connect 88 0 89 0;
 #X connect 89 0 87 0;
 #X connect 90 0 91 0;
@@ -555,6 +569,7 @@
 #X connect 91 0 92 0;
 #X connect 92 0 94 0;
 #X connect 93 0 250 0;
+#X connect 93 0 272 0;
 #X connect 94 0 95 0;
 #X connect 95 0 93 0;
 #X connect 96 0 91 0;
@@ -564,6 +579,7 @@
 #X connect 99 0 100 0;
 #X connect 100 0 102 0;
 #X connect 101 0 250 0;
+#X connect 101 0 272 0;
 #X connect 102 0 105 0;
 #X connect 103 0 99 0;
 #X connect 104 0 99 0;
@@ -572,6 +588,7 @@
 #X connect 106 0 107 0;
 #X connect 107 0 109 0;
 #X connect 108 0 250 0;
+#X connect 108 0 272 0;
 #X connect 109 0 112 0;
 #X connect 110 0 106 0;
 #X connect 111 0 106 0;
@@ -580,6 +597,7 @@
 #X connect 113 0 114 0;
 #X connect 114 0 119 0;
 #X connect 115 0 250 0;
+#X connect 115 0 272 0;
 #X connect 116 0 113 0;
 #X connect 117 0 113 0;
 #X connect 118 0 115 0;
@@ -588,6 +606,7 @@
 #X connect 120 0 121 0;
 #X connect 121 0 123 0;
 #X connect 122 0 250 0;
+#X connect 122 0 272 0;
 #X connect 123 0 132 0;
 #X connect 124 0 120 0;
 #X connect 125 0 120 0;
@@ -595,6 +614,7 @@
 #X connect 126 0 127 0;
 #X connect 127 0 129 0;
 #X connect 128 0 250 0;
+#X connect 128 0 272 0;
 #X connect 129 0 133 0;
 #X connect 130 0 126 0;
 #X connect 131 0 126 0;
@@ -739,38 +759,20 @@
 #X connect 268 0 246 1;
 #X connect 269 0 242 0;
 #X connect 271 0 240 0;
-#X restore -7 625 pd sound;
+#X restore -11 240 pd sound;
 #X obj -10 77 import oscx;
-#X floatatom 4 471 5 0 0 0 - - -;
-#X floatatom 38 472 5 0 0 0 - - -;
+#X floatatom -11 178 5 0 0 0 - - -;
+#X floatatom 29 178 5 0 0 0 - - -;
 #X obj -11 141 OSCroute /latitude /longitude /altitude;
-#X obj -12 113 dumpOSC 1234;
-#X floatatom 74 472 5 0 0 0 - - -;
-#X obj 73 248 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 116 326 random 114;
-#X obj 116 360 + 15;
-#X floatatom 16 189 5 0 0 0 - - -;
-#X floatatom 72 187 5 0 0 0 - - -;
-#X floatatom 111 188 5 0 0 0 - - -;
-#X obj -5 345 metro 10000;
-#X obj 0 396 random 2;
-#X obj 116 280 metro 1044;
+#X floatatom 70 178 5 0 0 0 - - -;
+#X obj -12 113 dumpOSC 4000;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 0 2 1 2;
 #X connect 3 0 0 0;
 #X connect 4 0 0 1;
-#X connect 5 0 11 0;
-#X connect 5 1 12 0;
-#X connect 5 2 13 0;
-#X connect 6 0 5 0;
-#X connect 7 0 0 2;
-#X connect 8 0 14 0;
-#X connect 8 0 16 0;
-#X connect 9 0 10 0;
-#X connect 13 0 7 0;
-#X connect 14 0 15 0;
-#X connect 15 0 3 0;
-#X connect 15 0 4 0;
-#X connect 16 0 9 0;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 5 2 6 0;
+#X connect 6 0 0 2;
+#X connect 7 0 5 0;
