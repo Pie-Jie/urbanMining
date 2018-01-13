@@ -1,11 +1,5 @@
-Client/node_modules
-Server/node_modules
-Server/.DS_Store
-Client/.DS_Store
-Server/.DS_Store
-Visualisation/.DS_Store
-Particle/.DS_Store
-Music/.DS_Store
-Branding/.DS_Store
+*/node_modules
+/node_modules
+*/.DS_Store
 .DS_Store
 npm-debug.log
