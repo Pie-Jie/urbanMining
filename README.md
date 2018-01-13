@@ -3,10 +3,6 @@
 We are using a rent bike in the city of Brussels to create music in Pure Data (extended) depending on its location, altitude and speed while driving. 
 The city of Brussels functions as a sound box which is visualized in a processing application. The data from the Particle Electron is received by a Node.js Client and is sent to an Heroku application which sends the data back to other clients who are connecting.
 
-## Link to Heroku application
-
-https://synfocycle.herokuapp.com/
-
 ## Contains
 
 ### Branding
@@ -32,3 +28,7 @@ This Node.js server is deployed on an Heroku application. It receives the gps-da
 ### Visualisation
 
 A simplified 3D map created in Processing which visualizes the created route by the bicyclist. It receives its gps-data from one of the clients.
+
+## Link to Heroku application
+
+https://synfocycle.herokuapp.com/
