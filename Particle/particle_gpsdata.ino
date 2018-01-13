@@ -4,17 +4,19 @@ TinyGPSPlus gps;
 
 //forward declareted, compiler loves you
 void sendGpsData();
+
 //Set a fixed baud rate of 9600 (bits/s)
 static const uint32_t GPSBaud = 9600;
+
 // fixed int of 500(ms) for the timer
 const unsigned long PUBLISH_TIMER = 500;
+
 // Just a fancy name for an int, which has an extended size variable for number storage, and stores 32bits(4 bytes)
 unsigned long lastPublish = 0;
 
-void setup()
-{
-  Serial.begin(115200);
-  Serial1.begin(GPSBaud);  
+void setup(){
+    Serial.begin(115200);
+    Serial1.begin(GPSBaud);  
 }
 
 void loop(){
