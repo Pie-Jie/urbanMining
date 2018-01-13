@@ -15,6 +15,7 @@ npm install
 ```
 node server
 ```
+or
 ```
 heroku local
 ```
