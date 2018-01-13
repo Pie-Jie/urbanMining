@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 4000;
 var token;
 var devicesPr;
 
-var socket = io.connect('ws://synfocycle.herokuapp.com', {
+var socket = io.connect('ws://afternoon-shore-70838.herokuapp.com/', {
     reconnect: true
 });
 
@@ -74,7 +74,7 @@ var startStream = function () {
 
 socket.on('settings', function (data) {
     const settings = data;
-    
+    console.log(`Settings: ${settings}`);
     var udpPort = new osc.UDPPort({
         localAddress: "0.0.0.0",
         localPort: settings.oscInputPort
@@ -87,11 +87,13 @@ socket.on('settings', function (data) {
     });
 
     for (let param of settings.params) {
+        console.log(`param ${param}`);
         socket.on(param, (data) => {
             udpPort.send({
                 address: param,
                 args: parseFloat(data)
             }, "127.0.0.1", settings.oscOutputPort);
+            console.log(`param: ${param}`);
         });
     }
     udpPort.open();
