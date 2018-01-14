@@ -1,0 +1,10 @@
+{
+    "params": [
+        "/longitude",
+        "/latitude",
+        "/altitude",
+        "/kmph"
+    ],
+    "oscInputPort": 57121,
+    "oscOutputPort": 1234
+};

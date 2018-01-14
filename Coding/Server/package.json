@@ -1,0 +1,21 @@
+{
+  "name": "Synfocycle",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.2.0"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Team Dublin",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "4.13.4",
+    "json-parser": "^1.1.5",
+    "socket.io": "1.4.6"
+  }
+}
