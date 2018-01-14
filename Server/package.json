@@ -1,5 +1,5 @@
 {
-  "name": "websockets-socket.io",
+  "name": "Synfocycle",
   "version": "1.0.0",
   "engines": {
     "node": "6.2.0"
@@ -10,8 +10,8 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Team Dublin",
+  "license": "MIT",
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "4.13.4",
