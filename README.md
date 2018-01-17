@@ -9,25 +9,35 @@ The city of Brussels functions as a sound box which is visualized in a processin
 
 This contains our logo and casing for this project.
 
-### Client
+### Coding
+
+* Client
 
 A local Node.js client which receives data from the Particle Electron, sends it to the Heroku server and receives it back from that server.
 
-### Music
+* Music
 
 A pure data project which playes notes with a beat depending on the gps data (altitude, longitude, latitude and km/h).
 
-### Particle 
+* Particle 
 
 We decided to use a Particle Electron (IoT) because it has a built-in cellular antenna. This way we can send data over cellular towers and receive gps coördinates, altitude and speed of the bicyclist.
 
-### Server
+* Server
 
 This Node.js server is deployed on an Heroku application. It receives the gps-data from the client and sends it back to all connected clients.
 
-### Visualisation
+* Visualisation
 
 A simplified 3D map created in Processing which visualizes the created route by the bicyclist. It receives its gps-data from one of the clients.
+
+### Pitch
+
+This map contains the poster for advertising our project.
+
+### Technisch Schema
+
+Here you find a schematics how the project works with all the devices and how it is connected.
 
 ## Link to Heroku application
 
